@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breathing Kathmandu</title>
+<meta name="description" content="A research review of air pollution in Kathmandu Valley: health impacts, sources, data and solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <a class="brand" href="#top">Breathing Kathmandu</a>
+  <nav aria-label="Main">
+    <a href="#findings">Findings</a>
+    <a href="#data">Data</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#method">Method</a>
+    <a href="#sources">Sources</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <h1>Breathing Kathmandu</h1>
+    <p class="lead">What the evidence says about air pollution in Kathmandu Valley, what causes it, and what could help.</p>
+  </div>
+
+  <div class="valley" aria-hidden="true">
+    <svg viewBox="0 0 1200 320" preserveAspectRatio="none">
+      <path class="ridge far" d="M0 220 L120 140 L220 190 L360 90 L480 170 L600 110 L760 200 L900 120 L1040 180 L1200 130 L1200 320 L0 320Z"/>
+      <path class="ridge near" d="M0 260 L150 200 L300 240 L460 180 L620 245 L800 190 L980 250 L1200 200 L1200 320 L0 320Z"/>
+    </svg>
+    <div class="haze" id="haze"></div>
+  </div>
+
+  <div class="checker" role="group" aria-labelledby="checker-title">
+    <h2 id="checker-title">Compare a reading with WHO guidelines</h2>
+    <p>Move the slider to a 24-hour average PM2.5 reading (µg/m³). The haze over the valley thickens as the number rises.</p>
+    <label for="pm">PM2.5, 24-hour average: <output id="pm-out">15</output> µg/m³</label>
+    <input type="range" id="pm" min="0" max="150" step="1" value="15">
+    <p class="result" id="result" aria-live="polite"></p>
+    <p class="note">This tool only compares a number you choose with WHO levels. It does not show Kathmandu's actual air quality.</p>
+  </div>
+</section>
+
+<section id="findings" class="block">
+  <h2>Key findings</h2>
+
+  <article class="finding">
+    <h3>Air pollution has serious consequences for Nepal</h3>
+    <p>The World Bank's 2025 assessment links air pollution to about <strong>26,000 premature deaths</strong> a year in Nepal and an average loss of <strong>3.4 years</strong> of life expectancy. It estimates the economic cost at more than <strong>6% of GDP</strong> annually.</p>
+    <p class="caution">These are national estimates, not figures for Kathmandu Valley alone. Kathmandu Valley and the Terai are named as Nepal's air-pollution hotspots.</p>
+    <a href="https://www.worldbank.org/en/news/press-release/2025/06/17/air-pollution-is-the-number-one-health-risk-factor-in-nepal" target="_blank" rel="noopener">World Bank press release (2025)</a>
+  </article>
+
+  <article class="finding">
+    <h3>Fine particles (PM2.5) are important to monitor</h3>
+    <p>PM2.5 particles are 2.5 micrometres across or smaller. They are small enough to reach deep into the respiratory system, and exposure is linked to adverse health outcomes. The WHO 2021 guideline levels are:</p>
+    <div class="table-wrap">
+      <table>
+        <caption>WHO 2021 air-quality guideline levels (µg/m³)</caption>
+        <thead><tr><th scope="col">Pollutant</th><th scope="col">Annual mean</th><th scope="col">24-hour mean</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">PM2.5</th><td>5</td><td>15</td></tr>
+          <tr><th scope="row">PM10</th><td>15</td><td>45</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caution">These are health-based reference levels, not measurements of Kathmandu's air.</p>
+    <a href="https://www.who.int/publications/i/item/9789240034228" target="_blank" rel="noopener">WHO Global Air Quality Guidelines (2021)</a>
+  </article>
+
+  <article class="finding">
+    <h3>Pollution comes from many sources</h3>
+    <p>The World Bank points to vehicle emissions, industry, household cooking fuels, road dust and forest fires. Pollution also crosses municipal and national borders, so local action alone may not be enough.</p>
+    <ul class="chips">
+      <li>Vehicles</li><li>Industry</li><li>Household fuels</li><li>Road dust</li><li>Forest fires</li>
+    </ul>
+    <p class="caution">The share of each source changes with place, season, weather and pollutant. This project does not assign percentages without source-specific data.</p>
+    <a href="https://openknowledge.worldbank.org/bitstreams/95e5bd6f-53af-4da2-9c8f-eaa3272e7b96/download" target="_blank" rel="noopener">Towards Clean Air in Nepal (World Bank, 2025)</a>
+  </article>
+</section>
+
+<section id="data" class="block alt">
+  <h2>Explore the data</h2>
+  <p>Open Data Nepal publishes <em>Air Quality Data in Kathmandu</em>, covering 1 January 2015 to 13 March 2021. It includes PM2.5, PM10, ozone, sulfur dioxide and nitrogen dioxide.</p>
+  <p>Questions this dataset can help answer:</p>
+  <ul class="plain">
+    <li>How do recorded concentrations change over time?</li>
+    <li>Do pollutants or monitoring locations differ?</li>
+    <li>How do readings compare with WHO levels, when units and averaging periods match?</li>
+  </ul>
+  <p class="caution">The data ends in March 2021, so it cannot describe current conditions. Any conclusion should name the period and locations it covers.</p>
+  <a class="button" href="https://opendatanepal.com/dataset/air-quality-data-in-kathmandu" target="_blank" rel="noopener">Open the dataset</a>
+</section>
+
+<section id="solutions" class="block">
+  <h2>What could help</h2>
+  <p>The World Bank recommends coordinated action across sectors. Select a sector to see the approaches.</p>
+  <div class="tabs" role="tablist" aria-label="Sectors">
+    <button role="tab" id="tab-transport" aria-selected="true" aria-controls="panel">Transport</button>
+    <button role="tab" id="tab-industry" aria-selected="false" aria-controls="panel" tabindex="-1">Industry</button>
+    <button role="tab" id="tab-household" aria-selected="false" aria-controls="panel" tabindex="-1">Household energy</button>
+    <button role="tab" id="tab-monitoring" aria-selected="false" aria-controls="panel" tabindex="-1">Monitoring</button>
+    <button role="tab" id="tab-regional" aria-selected="false" aria-controls="panel" tabindex="-1">Regional cooperation</button>
+  </div>
+  <div id="panel" role="tabpanel" tabindex="0" aria-labelledby="tab-transport"></div>
+  <p class="caution">How well each approach works in a part of the Valley depends on how it is carried out, local conditions and measured results.</p>
+</section>
+
+<section id="method" class="block alt">
+  <h2>Method and limitations</h2>
+  <p>This is a secondary-research project. It reviews published institutional research, WHO guidelines and public data. It is not an original health study or a new measurement campaign.</p>
+  <ol>
+    <li>Review the World Bank assessment for Nepal's burden, sources and responses.</li>
+    <li>Use WHO guidelines as health-based reference levels.</li>
+    <li>Identify public Kathmandu air-quality datasets.</li>
+    <li>Keep national statistics separate from Kathmandu-specific evidence.</li>
+    <li>Check the age, coverage, units and limits of data before comparing.</li>
+  </ol>
+  <h3>Limitations</h3>
+  <ul class="plain">
+    <li>National estimates are not Kathmandu-only statistics.</li>
+    <li>WHO levels are references, not local readings.</li>
+    <li>Historical data may not reflect today.</li>
+    <li>Missing observations, station differences and mixed averaging periods affect comparisons.</li>
+    <li>Naming a source does not show how much it contributes.</li>
+  </ul>
+  <p>Next steps: use recent, validated station data to compare levels over time, study seasonal patterns, and test whether local readings exceed WHO levels.</p>
+</section>
+
+<section class="block conclusion">
+  <h2>Conclusion</h2>
+  <p>Air pollution is a serious environmental and public-health problem in Nepal, and Kathmandu Valley is one of its hotspots. It has many sources and needs coordinated responses, not a single fix.</p>
+  <p>Breathing Kathmandu brings together credible research, open data and honest statements of uncertainty, so that reliable information can support informed discussion and practical action for cleaner air.</p>
+</section>
+
+<section id="sources" class="block">
+  <h2>References</h2>
+  <ol class="refs">
+    <li>World Bank. (2025). <em>Air Pollution Is the Number One Health Risk Factor in Nepal.</em> <a href="https://www.worldbank.org/en/news/press-release/2025/06/17/air-pollution-is-the-number-one-health-risk-factor-in-nepal" target="_blank" rel="noopener">Link</a></li>
+    <li>World Bank. (2025). <em>Towards Clean Air in Nepal: Benefits, Pollution Sources, and Solutions.</em> <a href="https://openknowledge.worldbank.org/bitstreams/95e5bd6f-53af-4da2-9c8f-eaa3272e7b96/download" target="_blank" rel="noopener">Link</a></li>
+    <li>World Health Organization. (2021). <em>WHO Global Air Quality Guidelines.</em> <a href="https://www.who.int/publications/i/item/9789240034228" target="_blank" rel="noopener">Link</a></li>
+    <li>Open Data Nepal. <em>Air Quality Data in Kathmandu</em> (January 2015 to March 2021). <a href="https://opendatanepal.com/dataset/air-quality-data-in-kathmandu" target="_blank" rel="noopener">Link</a></li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <p>Breathing Kathmandu is a review of existing evidence. Figures are quoted from the sources above.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
